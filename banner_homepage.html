@@ -1,0 +1,341 @@
+//information: This is a HTML file for a homepage banner section. It includes a hero section with a title, description,
+buttons, and features. The CSS styles define the layout, typography, and visual effects for the hero section.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        .websaz-hero {
+            direction: l;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 65px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 75px 25px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .websaz-hero-content {
+            min-width: 0;
+        }
+
+        .websaz-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #000000;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .websaz-eyebrow-dot,
+        .websaz-online-dot {
+            width: 9px;
+            height: 9px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgb(255, 232, 202);
+        }
+
+        .websaz-hero h1 {
+            margin: 0 0 22px;
+            color: #252c29;
+            font-size: clamp(32px, 4vw, 53px);
+            font-weight: 800;
+            line-height: 1.65;
+            letter-spacing: -1.3px;
+        }
+
+        .websaz-hero h1 span {
+            display: block;
+            color: rgb(255, 232, 202);
+        }
+
+        .websaz-hero-description {
+            max-width: 520px;
+            margin: 0 0 30px;
+            color: #686c67;
+            font-size: 16px;
+            line-height: 2.2;
+        }
+
+        .websaz-hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 13px;
+            margin-bottom: 28px;
+        }
+
+        .websaz-hero-buttons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            min-height: 54px;
+            padding: 0 22px;
+            border-radius: 13px;
+            box-sizing: border-box;
+            text-decoration: none !important;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+        }
+
+        .websaz-btn-primary {
+            background: rgb(255, 232, 202);
+            color: #000000 !important;
+            box-shadow: 0 8px 20px rgba(33, 124, 112, 0.18);
+        }
+
+        .websaz-btn-primary:hover {
+            background: rgb(255, 232, 202);
+            color: #000000 !important;
+            transform: translateY(-3px);
+        }
+
+        .websaz-btn-primary span {
+            font-size: 20px;
+        }
+
+        .websaz-btn-secondary {
+            border: 1px solid #deded5;
+            background: #fff;
+            color: #303a35 !important;
+        }
+
+        .websaz-btn-secondary:hover {
+            border-color: rgb(255, 232, 202);
+            color: rgb(0, 0, 0) !important;
+        }
+
+        .websaz-hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            color: #747871;
+            font-size: 12px;
+        }
+
+        .websaz-hero-visual {
+            position: relative;
+            min-width: 0;
+            padding: 22px;
+            border: 1px solid #e9e2d6;
+            border-radius: 29px;
+            background: #f4eee3;
+            box-shadow: 0 25px 65px rgba(48, 42, 30, 0.09);
+            animation: websazHeroFloat 5s ease-in-out infinite;
+            box-sizing: border-box;
+        }
+
+        .websaz-visual-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 17px;
+            color: #333b36;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .websaz-hero-image {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 19px;
+            background: #e5dfd4;
+        }
+
+        .websaz-hero-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .websaz-hero-visual:hover .websaz-hero-image img {
+            transform: scale(1.04);
+        }
+
+        .websaz-visual-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 21px 2px 2px;
+        }
+
+        .websaz-visual-bottom small {
+            color: #77776e;
+            font-size: 12px;
+        }
+
+        .websaz-visual-bottom h3 {
+            margin: 7px 0 0;
+            color: #2b302c;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .websaz-visual-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 43px;
+            height: 43px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgb(255, 232, 202);
+            color: #fff;
+            font-size: 23px;
+        }
+
+        .websaz-floating-note {
+            position: absolute;
+            top: 105px;
+            right: -24px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 13px 15px;
+            border: 1px solid #f0eee8;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 12px 35px rgba(30, 35, 29, 0.12);
+        }
+
+        .websaz-note-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 11px;
+            background: #e4f2ed;
+            color: rgb(255, 232, 202);
+            font-size: 21px;
+        }
+
+        .websaz-floating-note strong,
+        .websaz-floating-note small {
+            display: block;
+            white-space: nowrap;
+        }
+
+        .websaz-floating-note strong {
+            color: #303630;
+            font-size: 12px;
+        }
+
+        .websaz-floating-note small {
+            margin-top: 5px;
+            color: #81837b;
+            font-size: 10px;
+        }
+
+        @keyframes websazHeroFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .websaz-hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 45px 18px;
+            }
+
+            .websaz-hero h1 {
+                font-size: 34px;
+                letter-spacing: -0.5px;
+            }
+
+            .websaz-hero-description {
+                font-size: 14px;
+            }
+
+            .websaz-hero-visual {
+                width: calc(100% - 10px);
+                max-width: 440px;
+                margin: 0 auto;
+                padding: 15px;
+            }
+
+            .websaz-hero-image {
+                height: 250px;
+            }
+
+            .websaz-floating-note {
+                right: -8px;
+                top: 83px;
+            }
+
+            .websaz-hero-features {
+                line-height: 2;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .websaz-hero-visual {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <span class="websaz-eyebrow">
+        <span class="websaz-eyebrow-dot"></span>
+        وبساز | همراه رشد کسب‌وکار شما
+    </span>
+
+    <h1>
+        کسب‌وکارت رو آنلاین کن؛
+        <span>حرفه‌ای‌تر دیده شو.</span>
+    </h1>
+
+    <p class="websaz-hero-description">
+        با یک وب‌سایت حرفه‌ای، حضورت رو در دنیای آنلاین جدی‌تر کن
+        و فرصت‌های تازه‌ای برای رشد کسب‌وکارت بساز.
+    </p>
+
+    <div class="websaz-hero-buttons">
+        <a href="#consultation" class="websaz-btn-primary">
+            دریافت مشاوره رایگان
+            <span>←</span>
+        </a>
+
+        <a href="#services" class="websaz-btn-secondary">
+            مشاهده خدمات
+        </a>
+    </div>
+
+    <div class="websaz-hero-features">
+        <span>✓ طراحی اختصاصی</span>
+        <span>✓ تجربه کاربری</span>
+        <span>✓ پشتیبانی و همراهی</span>
+    </div>
+
+    </div>
+</body>
+
+</html>
